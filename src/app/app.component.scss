@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  width: 200px;
+  border: 1px solid #ddd;
+  transition: all ease-in-out 200ms;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  &:hover {
+    border: 1px solid #20a8d8;
+  }
+}
