@@ -1,13 +1,27 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, ModuleWithProviders } from "@angular/core";
 
 import { AppComponent } from "./app.component";
 import { SharedLibraryModule } from "shared-library";
+import { ClientTestComponent } from "./client-test/client-test.component";
+import { AppRoutingModule } from "./app-routing.module";
+
+const SERVICES = [];
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, SharedLibraryModule],
-  providers: [],
+  declarations: [AppComponent, ClientTestComponent],
+  imports: [AppRoutingModule, SharedLibraryModule],
+  providers: [...SERVICES],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+@NgModule({})
+export class ClientApp {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: AppModule,
+      providers: [...SERVICES]
+    };
+  }
+}
